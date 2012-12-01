@@ -82,7 +82,7 @@ module ActsAsTaggableOn
       reject!(&:blank?)
       map!(&:strip)
       map!(&:downcase) if ActsAsTaggableOn.force_lowercase
-      map!(&:parameterize) if ActsAsTaggableOn.force_parameterize
+      map!(&:to_param) if ActsAsTaggableOn.force_parameterize
 
       uniq!
     end
